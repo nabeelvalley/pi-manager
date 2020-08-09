@@ -26,11 +26,6 @@ const main = async () => {
       console.log(`> Ready on port ${port}`)
     })
   })
-
-  process.on("SIGINT", async () => {
-    console.warn("server close command received")
-    await kill()
-  })
 }
 
 main()
