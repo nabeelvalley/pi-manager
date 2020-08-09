@@ -1,0 +1,12 @@
+[
+  {
+    "name": "samples-interval-auto",
+    "startup": true,
+    "script": "./samples/interval.js"
+  },
+  {
+    "name": "samples-interval-manual",
+    "startup": false,
+    "script": "./samples/interval.js"
+  }
+]
