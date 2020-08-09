@@ -3,10 +3,31 @@ import styles from "../styles/Home.module.css"
 
 export default function AvailableProcessList({ procs }) {
   return (
-    <div>
-      {procs.map((p,i) => (
-        <p key={i}> {p} </p>
-      ))}
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {procs.map((p, i) => (
+          <tr key={i}>
+            <td>{p}</td>
+            <td>
+              <button
+                onClick={async () =>
+                  await fetch(`/api/process-instance?name=${p}`, {
+                    method: "POST",
+                  })
+                }
+              >
+                Start
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   )
 }

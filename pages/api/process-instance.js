@@ -14,6 +14,8 @@ export default async (req, res) => {
     method,
   } = req
 
+  console.log({id, name, method})
+
   const current = config.filter((c) => c.name === name)[0]
 
   switch (method) {

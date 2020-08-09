@@ -21,6 +21,7 @@ export default function RegisteredProcessList({ procs }) {
             <th>ID</th>
             <th>Name</th>
             <th>Status</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +30,28 @@ export default function RegisteredProcessList({ procs }) {
               <td>{p.pm_id}</td>
               <td>{p.name}</td>
               <td>{p.pm2_env.status}</td>
+              <td>
+                <button
+                  onClick={async () =>
+                    await fetch(
+                      `/api/process-instance?name=${p.name}`,
+
+                      { method: "POST" }
+                    )
+                  }
+                >
+                  Start
+                </button>
+                <button
+                  onClick={async () =>
+                    await fetch(`/api/process-instance?id=${p.pm_id}`, {
+                      method: "DELETE",
+                    })
+                  }
+                >
+                  Stop
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
