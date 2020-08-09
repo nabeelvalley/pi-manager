@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { getAll, start, stop } from "lib/process-instance"
+import { get } from "lib/process-instance"
 import config from "process.config.json"
 
 /**
@@ -10,24 +10,14 @@ import config from "process.config.json"
  */
 export default async (req, res) => {
   const {
-    query: { id, name },
-    method,
+    query: { id },
+    method
   } = req
   
-  const current = config.filter((c) => c.name === name)[0]
-
   switch (method) {
     case "GET":
-      res.json({
-        registered: await getAll(),
-        available: config.map((c) => c.name),
-      })
+      res.json(await get(id))
       break
-    case "POST":
-      res.json(await start(current))
-      break
-    case "DELETE":
-      res.json(await stop(id))
     default:
       res.status(405)
       res.end()

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
 
@@ -28,7 +29,7 @@ export default function RegisteredProcessList({ procs }) {
           {procs.map((p, i) => (
             <tr key={i}>
               <td>{p.pm_id}</td>
-              <td>{p.name}</td>
+              <td><Link href="/process-instance/[id]" as={`/process-instance/${p.pm_id}`}><a>{p.name}</a></Link></td>
               <td>{p.pm2_env.status}</td>
               <td>
                 <button
