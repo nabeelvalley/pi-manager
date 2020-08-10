@@ -2,4 +2,7 @@
   max-height: 50vh;
   width: 90vw;
   overflow: auto;
+  padding: 1em;
+  background-color: #292929;
+  color: #00b947;
 }

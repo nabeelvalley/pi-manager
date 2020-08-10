@@ -6,6 +6,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "next start",
+    "start:prod": "pm2 start yarn --name \"pi-manager-server\" --interpreter bash --time -- start",
     "pm2": "pm2"
   },
   "dependencies": {

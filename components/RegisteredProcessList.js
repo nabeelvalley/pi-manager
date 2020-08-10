@@ -48,56 +48,58 @@ export default function RegisteredProcessList({ procs }) {
                 </Link>
               </td>
               <td>
-                <div className={styles.buttons}>
-                  <button
-                    className={styles.green}
-                    onClick={async () =>
-                      await fetch(`/api/process-instance?name=${p.name}`, {
-                        method: "POST",
-                      })
-                    }
-                  >
-                    <i className="icofont-ui-play"></i>
-                  </button>
-                  <button
-                    className={styles.orange}
-                    onClick={async () =>
-                      await fetch(`/api/process-instance?id=${p.pm_id}`, {
-                        method: "PUT",
-                      })
-                    }
-                  >
-                    <i className="icofont-pause"></i>
-                  </button>
-                  <button
-                    className={styles.red}
-                    onClick={async () => {
-                      router.push("/")
-                      await fetch(`/api/process-instance?id=${p.pm_id}`, {
-                        method: "DELETE",
-                      })
-                    }}
-                  >
-                    <i className="icofont-square"></i>
-                  </button>
-                  <Link
-                    href="/process-instance/[id]"
-                    as={`/process-instance/${p.pm_id}`}
-                  >
-                    <a className="button">
-                      <i className="icofont-page"></i>
-                    </a>
-                  </Link>
-                  {p.meta && p.meta.port ? (
-                    <a
-                      href={`http://${window.location.hostname}:${p.meta.port}`}
-                      className="button"
-                      target="_blank"
+                {p.meta && p.meta.name ? (
+                  <div className={styles.buttons}>
+                    <button
+                      className={styles.green}
+                      onClick={async () =>
+                        await fetch(`/api/process-instance?name=${p.name}`, {
+                          method: "POST",
+                        })
+                      }
                     >
-                      <i className="icofont-sign-out"></i>
-                    </a>
-                  ) : null}
-                </div>
+                      <i className="icofont-ui-play"></i>
+                    </button>
+                    <button
+                      className={styles.orange}
+                      onClick={async () =>
+                        await fetch(`/api/process-instance?id=${p.pm_id}`, {
+                          method: "PUT",
+                        })
+                      }
+                    >
+                      <i className="icofont-pause"></i>
+                    </button>
+                    <button
+                      className={styles.red}
+                      onClick={async () => {
+                        router.push("/")
+                        await fetch(`/api/process-instance?id=${p.pm_id}`, {
+                          method: "DELETE",
+                        })
+                      }}
+                    >
+                      <i className="icofont-square"></i>
+                    </button>
+                    <Link
+                      href="/process-instance/[id]"
+                      as={`/process-instance/${p.pm_id}`}
+                    >
+                      <a className="button">
+                        <i className="icofont-page"></i>
+                      </a>
+                    </Link>
+                    {p.meta && p.meta.port ? (
+                      <a
+                        href={`http://${window.location.hostname}:${p.meta.port}`}
+                        className="button"
+                        target="_blank"
+                      >
+                        <i className="icofont-sign-out"></i>
+                      </a>
+                    ) : null}
+                  </div>
+                ) : null}
               </td>
             </tr>
           ))}

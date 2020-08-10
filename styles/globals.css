@@ -17,6 +17,11 @@ a {
   box-sizing: border-box;
 }
 
+.code {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
 button,
 .button {
   display: inline-block;

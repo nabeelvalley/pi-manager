@@ -36,7 +36,9 @@ export default function Home() {
           <h3>Logs</h3>
           <div className={styles.logs}>
             {data.logs.map((l, i) => (
-              <div key={i}> {l} </div>
+              <div key={i} className="code">
+                {l}
+              </div>
             ))}
           </div>
           {data.meta && data.meta.port ? (
