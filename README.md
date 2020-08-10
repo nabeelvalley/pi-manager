@@ -1,3 +1,5 @@
+![Node.js Build](https://github.com/nabeelvalley/pi-manager/workflows/Node.js%20Build/badge.svg)
+
 # Pi Manager
 
 Pi Manager is a light weight process management application for Raspberry Pi that runs on [Next.js](https://github.com/vercel/next.js/) and [PM2](https://github.com/Unitech/pm2). The application allows you to easily view logs and manage the lifecycle of defined scripts/processes running on your Raspberry Pi (or any server really). It even works on mobile!
