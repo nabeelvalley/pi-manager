@@ -23,8 +23,6 @@ export default function Home() {
     }
   )
 
-  console.log(data)
-
   if (error) console.error(error)
 
   return (

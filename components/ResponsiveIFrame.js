@@ -17,5 +17,7 @@ import styles from "../styles/IFrame.module.css"
  * }} props
  */
 export default function ResponsiveIFrame({ url }) {
-  return <iframe className={styles.iframe} src={url} allowfullscreen></iframe>
+  return (
+    <iframe className={styles.iframe} src={url} allowFullScreen={true}></iframe>
+  )
 }
