@@ -11,12 +11,20 @@ import config from "process.config.json"
 export default async (req, res) => {
   const {
     query: { id },
-    method
+    method,
   } = req
-  
+
+  if (!id) {
+    res.status(400)
+    res.end()
+    return
+  }
+
   switch (method) {
     case "GET":
-      res.json(await get(id))
+      const proc = await get(id)
+      const meta = config.filter((c) => c.name === proc.name)[0]
+      res.json({ ...proc, meta })
       break
     default:
       res.status(405)

@@ -1,0 +1,42 @@
+.table {
+  width: 100%;
+}
+
+.table th {
+  text-align: left;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.buttons > * {
+  display: block;
+}
+
+.green {
+  color: #008000;
+}
+.green:hover,
+.green:focus {
+  color: #0080008a;
+}
+
+.red {
+  color: #ff0000;
+}
+
+.red:hover,
+.red:focus {
+  color: #ff00008a;
+}
+
+.orange {
+  color: #ffa500;
+}
+
+.orange:hover,
+.orange:focus {
+  color: #ffa5008a;
+}

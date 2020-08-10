@@ -1,5 +1,6 @@
 import Head from "next/head"
-import styles from "../styles/Home.module.css"
+import Link from "next/link"
+import styles from "../styles/Layout.module.css"
 
 export default function Layout({ children }) {
   return (
@@ -9,11 +10,20 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <header>
+        <Link href="/">
+          <a>
+            <h1 className={styles.title}>
+              <i className="icofont-home"></i>
+              &nbsp;Pi Manager
+            </h1>
+          </a>
+        </Link>
+      </header>
+
       <main className={styles.main}>{children}</main>
 
-      <footer className={styles.footer}>
-          Pi Manager by Nabeel Valley
-      </footer>
+      <footer className={styles.footer}>Pi Manager by Nabeel Valley</footer>
     </div>
   )
 }

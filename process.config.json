@@ -2,11 +2,18 @@
   {
     "name": "samples-interval-auto",
     "startup": true,
-    "script": "./samples/interval.js"
+    "script": "./samples/interval.js",
+    "logDateFormat": "MM-DD HH:mm:ss"
   },
   {
     "name": "samples-interval-manual",
     "startup": false,
     "script": "./samples/interval.js"
+  },
+  {
+    "name": "samples-server",
+    "startup": false,
+    "script": "./samples/server.js",
+    "port": 1251
   }
 ]

@@ -1,3 +1,5 @@
+@import url(./icofont.css);
+
 html,
 body {
   padding: 0;
@@ -13,4 +15,31 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button,
+.button {
+  display: inline-block;
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  font-size: 1rem;
+  background-color: transparent;
+  padding: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:focus,
+.button:focus {
+  outline: 1px solid #ffffff;
+  outline-offset: -4px;
+}
+
+button:active,
+.button:focus {
+  transform: scale(0.99);
 }
